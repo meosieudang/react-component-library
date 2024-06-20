@@ -5,6 +5,7 @@ import vqmm from "../assets/cbvn_2024/vqmm.png";
 import bg_result from "../assets/cbvn_2024/bg_result.png";
 import footer from "../assets/CarlsbergTet/footer.png";
 import pointer from "../assets/Tuborg/pointer.png";
+
 import { CoreWheel } from "./WinWheel";
 
 let circleRadius = 170;
@@ -348,7 +349,7 @@ const Game = ({
             </div>
             <div className="text-center text-[20px] uppercase font-black mt-[3vh] tracking-tight relative flex flex-col items-center">
               <img
-                src={"/assets/cbvn_2024/g" + message.giftId + ".png"}
+                src={"../../dist/assets/cbvn_2024/g" + message.giftId + ".png"}
                 alt=""
                 style={{ width: "60%" }}
               />
