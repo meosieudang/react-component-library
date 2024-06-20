@@ -6261,7 +6261,7 @@ const te = Math.min(500, window.innerWidth), Tr = document.createElement("img"),
             /* @__PURE__ */ XA.jsx("div", { className: "text-center text-[20px] uppercase font-black mt-[3vh] tracking-tight relative flex flex-col items-center", children: /* @__PURE__ */ XA.jsx(
               "img",
               {
-                src: "../../dist/assets/cbvn_2024/g" + l.giftId + ".png",
+                src: "/dist/assets/cbvn_2024/g" + l.giftId + ".png",
                 alt: "",
                 style: { width: "60%" }
               }

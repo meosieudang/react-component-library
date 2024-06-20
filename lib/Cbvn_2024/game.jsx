@@ -349,7 +349,7 @@ const Game = ({
             </div>
             <div className="text-center text-[20px] uppercase font-black mt-[3vh] tracking-tight relative flex flex-col items-center">
               <img
-                src={"../../dist/assets/cbvn_2024/g" + message.giftId + ".png"}
+                src={"/dist/assets/cbvn_2024/g" + message.giftId + ".png"}
                 alt=""
                 style={{ width: "60%" }}
               />
