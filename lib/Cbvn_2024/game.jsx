@@ -317,7 +317,7 @@ const Game = ({
           />
           <img src={vqmm} className="h-28" alt="" />
           <img
-            src={process.env.PUBLIC_URL + "/assets/cbvn_2024/g" + 227 + ".png"}
+            src={`/dist/assets/cbvn_2024/g${227}.png`}
             alt=""
             style={{ width: "60%" }}
           />
