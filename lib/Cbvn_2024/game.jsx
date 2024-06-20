@@ -316,6 +316,11 @@ const Game = ({
             style={{ marginTop: -40, height: 140 }}
           />
           <img src={vqmm} className="h-28" alt="" />
+          <img
+            src={require("/assets/cbvn_2024/g" + 227 + ".png")}
+            alt=""
+            style={{ width: "60%" }}
+          />
           <p
             className="absolute right-2 top-1 text-xl font-roboto font-bold"
             style={{
