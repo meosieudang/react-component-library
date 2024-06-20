@@ -5,9 +5,31 @@ import vqmm from "../assets/cbvn_2024/vqmm.png";
 import bg_result from "../assets/cbvn_2024/bg_result.png";
 import footer from "../assets/CarlsbergTet/footer.png";
 import pointer from "../assets/Tuborg/pointer.png";
+import g223 from "../assets/cbvn_2024/g223.png";
+import g224 from "../assets/cbvn_2024/g224.png";
+import g225 from "../assets/cbvn_2024/g225.png";
+import g226 from "../assets/cbvn_2024/g226.png";
+import g227 from "../assets/cbvn_2024/g227.png";
+import g228 from "../assets/cbvn_2024/g228.png";
+import g247 from "../assets/cbvn_2024/g247.png";
+import g248 from "../assets/cbvn_2024/g248.png";
+import g249 from "../assets/cbvn_2024/g249.png";
+import g250 from "../assets/cbvn_2024/g250.png";
 
 import { CoreWheel } from "./WinWheel";
 
+const imgD = {
+  223: g223,
+  224: g224,
+  225: g225,
+  226: g226,
+  227: g227,
+  228: g228,
+  247: g247,
+  248: g248,
+  249: g249,
+  250: g250,
+};
 let circleRadius = 170;
 let circleBtnRadius = 50;
 let imageSpaceTop = 90;
@@ -316,11 +338,6 @@ const Game = ({
             style={{ marginTop: -40, height: 140 }}
           />
           <img src={vqmm} className="h-28" alt="" />
-          <img
-            src={`/dist/assets/cbvn_2024/g${227}.png`}
-            alt=""
-            style={{ width: "60%" }}
-          />
           <p
             className="absolute right-2 top-1 text-xl font-roboto font-bold"
             style={{
@@ -354,7 +371,7 @@ const Game = ({
             </div>
             <div className="text-center text-[20px] uppercase font-black mt-[3vh] tracking-tight relative flex flex-col items-center">
               <img
-                src={"/dist/assets/cbvn_2024/g" + message.giftId + ".png"}
+                src={imgD[message?.giftId ?? 0]}
                 alt=""
                 style={{ width: "60%" }}
               />
