@@ -6224,7 +6224,7 @@ const te = Math.min(500, window.innerWidth), Tr = document.createElement("img"),
           /* @__PURE__ */ WA.jsx(
             "img",
             {
-              src: require("/assets/cbvn_2024/g227.png"),
+              src: process.env.PUBLIC_URL + "/assets/cbvn_2024/g227.png",
               alt: "",
               style: { width: "60%" }
             }
