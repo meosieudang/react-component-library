@@ -3,7 +3,8 @@ import React, { useEffect, useRef, useState } from "react";
 import logo from "../assets/cbvn_2024/logo.png";
 import vqmm from "../assets/cbvn_2024/vqmm.png";
 import bg_result from "../assets/cbvn_2024/bg_result.png";
-
+import footer from "../assets/CarlsbergTet/footer.png";
+import pointer from "../assets/Tuborg/pointer.png";
 import { CoreWheel } from "./WinWheel";
 
 let circleRadius = 170;
@@ -88,7 +89,7 @@ const Game = ({
         // alert(e);
       }
     }
-    await loadImage(needle, "../assets/Tuborg/pointer.png");
+    await loadImage(needle, pointer);
     const wheel = new CoreWheel(
       {
         canvas: canvasRef.current,
@@ -347,7 +348,7 @@ const Game = ({
             </div>
             <div className="text-center text-[20px] uppercase font-black mt-[3vh] tracking-tight relative flex flex-col items-center">
               <img
-                src={"../assets/cbvn_2024/g" + message.giftId + ".png"}
+                src={"/assets/cbvn_2024/g" + message.giftId + ".png"}
                 alt=""
                 style={{ width: "60%" }}
               />
@@ -382,11 +383,7 @@ const Game = ({
         </div>
       </div>
       <div className={"relative flex justify-end items-center flex-col"}>
-        <img
-          src={"../assets/CarlsbergTet/footer.png"}
-          alt=""
-          className={"relative w-10/12 mt-3"}
-        />
+        <img src={footer} alt="" className={"relative w-10/12 mt-3"} />
       </div>
     </div>
   );
