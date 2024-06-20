@@ -12,12 +12,10 @@ const tuborgConfig = {
   campaignId: 118,
 };
 
-export const CBVNLuckyDraw2024 = ({}) => {
+export const CBVNLuckyDraw2024 = ({ urlParams }) => {
   //   const { info } = useContext(AppContext);
   // const navigate = useNavigate();
-  const params = new URLSearchParams(
-    "?schemes=&accept_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6IiIsIkVtcGxveWVlSWQiOiIxNTA5MyIsIlVzZXJOYW1lIjoibHVja3lfZGVtbyIsIkNhbXBhaWduSWQiOiIyMDYiLCJQb3NpdGlvbiI6IiIsIlJvbGVJZCI6IjEiLCJFbXBsb3llZUNvZGUiOiJsdWNreV9kZW1vIiwiRW1wbG95ZWVOYW1lIjoiQ2FybHNiZXJnIERlbW8iLCIiOiIiLCJmdWxsTmFtZSI6IkNhcmxzYmVyZyBEZW1vIiwiQ2FtcGFpZ25OYW1lIjoiIiwiQ2FtcGFpZ25UeXBlIjoiIiwiUm9sZXMiOiIiLCJqdGkiOiI4YzQ2YThhOS0yZDQ4LTQ2Y2MtYjAyMC04MjJjY2EzZWFjMjYiLCJleHAiOjE3MTYyNTk5OTcsImlzcyI6Imh0dHBzOi8vZG9jcy5taWNyb3NvZnQuY29tIiwiYXVkIjoiaHR0cHM6Ly9kb2NzLm1pY3Jvc29mdC5jb20ifQ.Ih3Vsb8_nyus80OWORrgltiRIMeBf_96uVwlBQaOIYk&campaignId=206&giftCode=NC52VT60&provinceId=79&channelId=865"
-  );
+  const params = new URLSearchParams(urlParams);
 
   const [readCodeMode, setReadCodeMode] = useState(false); // null | true | false
 
@@ -188,7 +186,6 @@ export const CBVNLuckyDraw2024 = ({}) => {
       }
     >
       <div className="flex-1">
-        a
         <Game
           campaignId={campaignId}
           quantity={quantity}
