@@ -1,35 +1,10 @@
 import moment from "moment";
 import React, { useEffect, useRef, useState } from "react";
-import logo from "../assets/cbvn_2024/logo.png";
-import vqmm from "../assets/cbvn_2024/vqmm.png";
-import bg_result from "../assets/cbvn_2024/bg_result.png";
-import footer from "../assets/CarlsbergTet/footer.png";
-import pointer from "../assets/Tuborg/pointer.png";
-import g223 from "../assets/cbvn_2024/g223.png";
-import g224 from "../assets/cbvn_2024/g224.png";
-import g225 from "../assets/cbvn_2024/g225.png";
-import g226 from "../assets/cbvn_2024/g226.png";
-import g227 from "../assets/cbvn_2024/g227.png";
-import g228 from "../assets/cbvn_2024/g228.png";
-import g247 from "../assets/cbvn_2024/g247.png";
-import g248 from "../assets/cbvn_2024/g248.png";
-import g249 from "../assets/cbvn_2024/g249.png";
-import g250 from "../assets/cbvn_2024/g250.png";
+import bg_result from "../../dist/assets/cbvn_2024/bg_result.png";
+import pointer from "../../dist/assets/Tuborg/pointer.png";
 
 import { CoreWheel } from "./WinWheel";
 
-const imgD = {
-  223: g223,
-  224: g224,
-  225: g225,
-  226: g226,
-  227: g227,
-  228: g228,
-  247: g247,
-  248: g248,
-  249: g249,
-  250: g250,
-};
 let circleRadius = 170;
 let circleBtnRadius = 50;
 let imageSpaceTop = 90;
@@ -331,13 +306,25 @@ const Game = ({
         style={{ width: sW }}
       >
         <>
-          <img
+          {/* <img
             src={logo}
             className="h-16"
             alt=""
             style={{ marginTop: -40, height: 140 }}
           />
-          <img src={vqmm} className="h-28" alt="" />
+          <img src={vqmm} className="h-28" alt="" /> */}
+          <div className="h-16" />
+          <div className="h-28" />
+          <span
+            className=" text-white text-2xl uppercase mt-3"
+            style={{
+              WebkitTextStroke: "0.5px #ffffff",
+              textShadow:
+                "1px 1px 0 #ffffff, -1px -1px 0 #ffffff, 1px -1px 0 #7eba47, -1px 1px 0 #7eba47, 1px 2px 4px #000",
+            }}
+          >
+            vòng quay may mắn
+          </span>
           <p
             className="absolute right-2 top-1 text-xl font-roboto font-bold"
             style={{
@@ -369,13 +356,40 @@ const Game = ({
                 />
               </div>
             </div>
-            <div className="text-center text-[20px] uppercase font-black mt-[3vh] tracking-tight relative flex flex-col items-center">
+            {/* <div className="text-center text-[20px] uppercase font-black mt-[3vh] tracking-tight relative flex flex-col items-center">
               <img
                 src={imgD[message?.giftId ?? 0]}
                 alt=""
                 style={{ width: "60%" }}
               />
-            </div>
+            </div> */}
+            <p className="text-center text-[24px] uppercase font-black font-roboto leading-7 mt-2 tracking-tight">
+              <span
+                className=" text-white text"
+                style={{
+                  WebkitTextStroke: "0.5px #ffffff",
+                  textShadow:
+                    "1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 2px 4px #000",
+                }}
+              >
+                Chúc mừng bạn đã trúng
+              </span>
+              <br />
+              <div className="text-center text-[20px] uppercase font-black mt-[3vh] tracking-tight relative flex flex-col items-center">
+                <span
+                  className=" text-[#fff]"
+                  style={{
+                    WebkitTextStroke: "0.5px #fff",
+                    textShadow:
+                      "1px 1px 0 #000, -1px -1px 0 #000, 0px -1px 0 #000, -1px 1px 0 #000,  1px 2px 4px #000",
+                  }}
+                >
+                  {message.message}
+                </span>
+              </div>
+              <br />
+            </p>
+
             <div
               className="text-white my-1 px-8 py-0.5 border-2 border-dashed border-white"
               style={{
@@ -388,7 +402,7 @@ const Game = ({
               <i>{moment(message.date).format("DD/MM/YYYY HH:mm")}</i>
             </div>
             <button
-              className="uppercase font-bold text-[#27539e] bg-white border-[#7eba57] border-2 p-2 rounded-lg shadow-xl"
+              className="mt-5 uppercase font-bold text-[#27539e] bg-white border-[#7eba57] border-2 p-2 rounded-lg shadow-xl"
               onClick={onReset}
             >
               {spinCount > 0 ? "Quay tiếp" : "Hoàn tất"}
@@ -405,9 +419,9 @@ const Game = ({
           />
         </div>
       </div>
-      <div className={"relative flex justify-end items-center flex-col"}>
+      {/* <div className={"relative flex justify-end items-center flex-col"}>
         <img src={footer} alt="" className={"relative w-10/12 mt-3"} />
-      </div>
+      </div> */}
     </div>
   );
 };
