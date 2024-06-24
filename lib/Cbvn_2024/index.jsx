@@ -12,7 +12,7 @@ const tuborgConfig = {
   campaignId: 118,
 };
 
-export const CBVNLuckyDraw2024 = ({ urlParams }) => {
+export const CBVNLuckyDraw2024 = ({ urlParams, onCallBackData }) => {
   //   const { info } = useContext(AppContext);
   // const navigate = useNavigate();
   const params = new URLSearchParams(urlParams);
@@ -95,6 +95,19 @@ export const CBVNLuckyDraw2024 = ({ urlParams }) => {
       })
       .then(({ data: res }) => {
         res.forEach((data) => {
+          onCallBackData({
+            type: "RESULT",
+            data: {
+              giftId: data.giftId,
+              giftIndex: 0,
+              giftCode: data.giftCode,
+              giftName: data.giftName,
+              giftWinImage: data.giftWinImage,
+              prizeWinningDay: data.createdDate,
+              isWin: true,
+            },
+            message: "Phần quà",
+          });
           //   Util.sendData({
           //     type: "RESULT",
           //     data: {
@@ -108,6 +121,11 @@ export const CBVNLuckyDraw2024 = ({ urlParams }) => {
           //     },
           //     message: "Phần quà",
           //   });
+        });
+        onCallBackData({
+          type: "END",
+          data: null,
+          message: "Đã kết thúc",
         });
         // Util.sendData({
         //   type: "END",
@@ -147,6 +165,11 @@ export const CBVNLuckyDraw2024 = ({ urlParams }) => {
     //   data: null,
     //   message: "Đã kết thúc",
     // });
+    onCallBackData({
+      type: "END",
+      data: null,
+      message: "Đã kết thúc",
+    });
   };
 
   const onGetResult = async (orderCode) => {
@@ -169,6 +192,11 @@ export const CBVNLuckyDraw2024 = ({ urlParams }) => {
           //     data: res,
           //     message: "Phần quà",
           //   });
+          onCallBackData({
+            type: "RESULT",
+            data: res,
+            message: "Phần quà",
+          });
           return res;
         }
         // Util.sendData({
@@ -176,6 +204,11 @@ export const CBVNLuckyDraw2024 = ({ urlParams }) => {
         //   data: res,
         //   message: "Hết quà",
         // });
+        onCallBackData({
+          type: "RESULT-NONE",
+          data: res,
+          message: "Hết quà",
+        });
       });
   };
   const isInPC = window.screen.width > 1024;
