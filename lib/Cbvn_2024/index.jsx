@@ -31,8 +31,7 @@ export const CBVNLuckyDraw2024 = ({ urlParams, onCallBackData }) => {
   const allGiftRef = useRef([]);
 
   useEffect(() => {
-    axios.defaults.baseURL =
-      "https://3082-2402-800-6371-e05f-bdc7-c4b7-c857-a2eb.ngrok-free.app";
+    axios.defaults.baseURL = "https://advancesystem-api.creasia.vn/";
     axios.defaults.headers.common["Access-Control-Allow-Origin"] = "*";
     axios.defaults.headers.common["Content-Type"] = "application/json";
   }, []);
@@ -63,7 +62,7 @@ export const CBVNLuckyDraw2024 = ({ urlParams, onCallBackData }) => {
     let channelId = params.get("channelId");
     let giftCode = params.get("giftCode");
     axios
-      .get("api/miniapp/creadvanced/getluckywheel", {
+      .get("/api/luckywheel/get_luckywheels", {
         params: {
           orderCode: giftCode,
           campaignId: campaignId - 0,
@@ -71,8 +70,7 @@ export const CBVNLuckyDraw2024 = ({ urlParams, onCallBackData }) => {
           channelId: channelId == "null" ? null : channelId - 0,
         },
       })
-      .then(({ data }) => {
-        const res = JSON.parse(data?.data??'');
+      .then(({ data: res }) => {
         if (res && JSON.stringify(res) != JSON.stringify(gifts)) {
           setGifts(res);
         }
@@ -81,7 +79,7 @@ export const CBVNLuckyDraw2024 = ({ urlParams, onCallBackData }) => {
 
   const onDrawDone = async () =>
     axios
-      .get("api/miniapp/creadvanced/getselloutgift", {
+      .get("api/sellout/get_selloutgift", {
         params: {
           orderCode: giftCode,
           campaignId: campaignId,
@@ -95,9 +93,7 @@ export const CBVNLuckyDraw2024 = ({ urlParams, onCallBackData }) => {
               : params.get("provinceId") - 0,
         },
       })
-      .then(({ data }) => {
-        const res = JSON.parse(data?.data??'');
-
+      .then(({ data: res }) => {
         res.forEach((data) => {
           onCallBackData({
             type: "RESULT",
@@ -140,15 +136,13 @@ export const CBVNLuckyDraw2024 = ({ urlParams, onCallBackData }) => {
 
   const onLoadNoofWheel = (campaignId, orderCode) => {
     axios
-      .get("api/miniapp/creadvanced/getluckywheelnoofwheel", {
+      .get("api/luckywheel/get_luckywheel_noofwheel", {
         params: {
           orderCode: orderCode,
           campaignId: campaignId,
         },
       })
-      .then(({ data }) => {
-        const noOfWheel = JSON.parse(data?.data??'');
-
+      .then(({ data: noOfWheel }) => {
         if (noOfWheel) {
           if (noOfWheel.totalGiftPlan == 0) {
             setMessage("Mã không đúng hoặc đã hết quà!");
@@ -182,7 +176,7 @@ export const CBVNLuckyDraw2024 = ({ urlParams, onCallBackData }) => {
     let provinceId = params.get("provinceId");
     let channelId = params.get("channelId");
     return axios
-      .get("api/miniapp/creadvanced/getwheelspin", {
+      .get("/api/luckywheel/wheel_spin", {
         params: {
           orderCode,
           campaignId: campaignId,
@@ -190,9 +184,7 @@ export const CBVNLuckyDraw2024 = ({ urlParams, onCallBackData }) => {
           channelId: channelId == "null" ? null : channelId - 0,
         },
       })
-      .then(({ data, status }) => {
-        const res = JSON.parse(data?.data??'');
-
+      .then(({ data: res, status }) => {
         if (status == 200) {
           allGiftRef.current.push(res);
           //   Util.sendData({
