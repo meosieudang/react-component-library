@@ -72,7 +72,7 @@ export const CBVNLuckyDraw2024 = ({ urlParams, onCallBackData }) => {
         },
       })
       .then(({ data }) => {
-        const res = data.data;
+        const res = JSON.parse(data?.data??'');
         if (res && JSON.stringify(res) != JSON.stringify(gifts)) {
           setGifts(res);
         }
@@ -96,7 +96,7 @@ export const CBVNLuckyDraw2024 = ({ urlParams, onCallBackData }) => {
         },
       })
       .then(({ data }) => {
-        const res = data.data;
+        const res = JSON.parse(data?.data??'');
 
         res.forEach((data) => {
           onCallBackData({
@@ -147,7 +147,7 @@ export const CBVNLuckyDraw2024 = ({ urlParams, onCallBackData }) => {
         },
       })
       .then(({ data }) => {
-        const noOfWheel = data.data;
+        const noOfWheel = JSON.parse(data?.data??'');
 
         if (noOfWheel) {
           if (noOfWheel.totalGiftPlan == 0) {
@@ -191,7 +191,8 @@ export const CBVNLuckyDraw2024 = ({ urlParams, onCallBackData }) => {
         },
       })
       .then(({ data, status }) => {
-        const res = data.data;
+        const res = JSON.parse(data?.data??'');
+
         if (status == 200) {
           allGiftRef.current.push(res);
           //   Util.sendData({
