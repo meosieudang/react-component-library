@@ -32,7 +32,7 @@ export const CBVNLuckyDraw2024 = ({ urlParams, onCallBackData }) => {
 
   useEffect(() => {
     axios.defaults.baseURL =
-      "https://9d2f-2402-800-6371-e05f-61a8-391-8ac7-503.ngrok-free.app";
+      "https://3082-2402-800-6371-e05f-bdc7-c4b7-c857-a2eb.ngrok-free.app";
     axios.defaults.headers.common["Access-Control-Allow-Origin"] = "*";
     axios.defaults.headers.common["Content-Type"] = "application/json";
   }, []);

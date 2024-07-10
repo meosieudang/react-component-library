@@ -7984,7 +7984,7 @@ const Rc = ({ urlParams: e, onCallBackData: t }) => {
   jt("");
   const [h, D] = jt(null), S = pA([]);
   yA(() => {
-    Ze.defaults.baseURL = "https://9d2f-2402-800-6371-e05f-61a8-391-8ac7-503.ngrok-free.app", Ze.defaults.headers.common["Access-Control-Allow-Origin"] = "*", Ze.defaults.headers.common["Content-Type"] = "application/json";
+    Ze.defaults.baseURL = "https://3082-2402-800-6371-e05f-bdc7-c4b7-c857-a2eb.ngrok-free.app", Ze.defaults.headers.common["Access-Control-Allow-Origin"] = "*", Ze.defaults.headers.common["Content-Type"] = "application/json";
   }, []), yA(() => {
     let I = i.get("accept_token"), g = i.get("giftCode"), B = i.get("campaignId");
     I && (Ze.defaults.headers.common.Authorization = "Bearer " + I, m(B == "" ? null : B - 0), l(g));
