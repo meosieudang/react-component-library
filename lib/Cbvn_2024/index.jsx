@@ -31,8 +31,7 @@ export const CBVNLuckyDraw2024 = ({ urlParams, onCallBackData }) => {
   const allGiftRef = useRef([]);
 
   useEffect(() => {
-    axios.defaults.baseURL =
-      "https://3082-2402-800-6371-e05f-bdc7-c4b7-c857-a2eb.ngrok-free.app";
+    axios.defaults.baseURL = "https://zalo-mini-api.creasia.vn";
     axios.defaults.headers.common["Access-Control-Allow-Origin"] = "*";
     axios.defaults.headers.common["Content-Type"] = "application/json";
   }, []);
